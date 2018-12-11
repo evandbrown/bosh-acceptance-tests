@@ -37,6 +37,7 @@ networks:
     subnets:
       <% network.subnets.each do |subnet| %>
       - range: <%= subnet.range %>
+        reserved: [<%= subnet.reserved %>]
         static: [<%= subnet.static %>]
         gateway: <%= subnet.gateway %>
         dns: <%= p('dns').inspect %>
